@@ -1,17 +1,17 @@
-# jupyturtle
+# jupyturtle2
 Python Turtle graphics for Jupyter notebooks
 
 For a quick demo, open [the lab notebook](lab.ipynb).
 
-The idea and some of the code for this module was inspired by
-[Tolga Atam](https://github.com/tolgaatam)'s
-[ColabTurtle](https://github.com/tolgaatam/ColabTurtle/tree/master),
-via [Allen Downey](https://github.com/allendowney)'s book
-_Think Python, Third Edition_ (O'Reilly, 2024).
+`jupyturtle2` is a fork of [`jupyturtle`](https://github.com/ramalho/jupyturtle)
+replacing SVG output with rendering on an `ipycanvas` widget.
 
-This is a rewrite from scratch, using classes to model the turtle
-and the drawing—to make it easier to test, maintain and evolve by
-avoiding global variables to keep program state.
+It solves the problem of rendering SVG drawings that grow increasingly slow.
+
+But it introduces two other problems:
+
+1. A limited number of steps per second, which requires using `delay=0.01` for complex drawings.
+2. The final state of the canvases is not saved with the notebook.
 
 I used metaprogramming techniques to build the procedural API
 with global functions like `fd()` to move the turtle.
